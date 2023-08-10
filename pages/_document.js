@@ -5,11 +5,7 @@ export default function Document() {
         <Html lang="en">
             <Head>
                 {/* Fav Icon */}
-                <link
-                    rel="icon"
-                    type="image/png"
-                    href="/images/common/favicon.svg"
-                />
+                <link rel="icon" type="image/png" href="/images/favicon.png" />
 
                 {/* Font Awesome */}
                 <link
@@ -34,15 +30,16 @@ export default function Document() {
 
                 {/* Google Font */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
+
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
                     crossorigin
                 />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
                     rel="stylesheet"
-                ></link>
+                />
             </Head>
 
             <body>
