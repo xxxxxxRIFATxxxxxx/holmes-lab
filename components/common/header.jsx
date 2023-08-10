@@ -1,16 +1,47 @@
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
 
 const Header = () => {
     const [active, setActive] = useState("Home");
+    const [stickyClass, setStickyClass] = useState("relative");
+    const [showNav, setShowNav] = useState("hidden");
 
     const handleActive = (name) => {
         setActive(name);
     };
 
+    const handleShowNav = () => {
+        setShowNav((prevState) => {
+            if (prevState === "hidden") {
+                return "";
+            } else {
+                return "hidden";
+            }
+        });
+    };
+
+    const stickNavbar = () => {
+        if (window !== undefined) {
+            let windowHeight = window.scrollY;
+            windowHeight > 50
+                ? setStickyClass("sticky top-0 py-5 z-10")
+                : setStickyClass("");
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", stickNavbar);
+
+        return () => {
+            window.removeEventListener("scroll", stickNavbar);
+        };
+    }, []);
+
     return (
-        <nav className="bg-white border-gray-200 sticky top-5">
+        <nav
+            className={`${stickyClass} bg-white border-gray-200 pb-5 transition-all duration-200`}
+        >
             <div className="flex flex-wrap items-center justify-between mx-auto">
                 <Link href="/" className="flex items-center">
                     <Image
@@ -26,6 +57,7 @@ const Header = () => {
                 </Link>
 
                 <button
+                    onClick={handleShowNav}
                     data-collapse-toggle="navbar-default"
                     type="button"
                     className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -50,10 +82,7 @@ const Header = () => {
                     </svg>
                 </button>
 
-                <div
-                    className="hidden w-full md:block md:w-auto text-sm"
-                    id="navbar-default"
-                >
+                <div className={`${showNav} w-full md:block md:w-auto text-sm`}>
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-3 md:mt-0 md:border-0 md:bg-white">
                         <li onClick={() => handleActive("Home")}>
                             <Link
