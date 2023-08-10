@@ -5,7 +5,7 @@ import Link from "next/link";
 const Header = () => {
     const [active, setActive] = useState("Home");
     const [stickyClass, setStickyClass] = useState("relative");
-    const [showNav, setShowNav] = useState("hidde");
+    const [showNav, setShowNav] = useState("hidden");
 
     const handleActive = (name) => {
         setActive(name);
