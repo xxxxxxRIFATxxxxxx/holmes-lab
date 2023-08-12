@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "src": "/images/ar-1.jpg",
+        "category": "Furniture"
+    },
+
+    {
+        "id": 2,
+        "src": "/images/ar-1.jpg",
+        "category": "Furniture"
+    },
+
+    {
+        "id": 3,
+        "src": "/images/ar-1.jpg",
+        "category": "Furniture"
+    },
+
+    {
+        "id": 4,
+        "src": "/images/ar-1.jpg",
+        "category": "Furniture"
+    },
+
+    {
+        "id": 5,
+        "src": "/images/ar-1.jpg",
+        "category": "Tiles"
+    },
+
+    {
+        "id": 6,
+        "src": "/images/ar-1.jpg",
+        "category": "Tiles"
+    },
+
+    {
+        "id": 7,
+        "src": "/images/ar-1.jpg",
+        "category": "Bathware"
+    },
+
+    {
+        "id": 8,
+        "src": "/images/ar-1.jpg",
+        "category": "Bathware"
+    },
+
+    {
+        "id": 9,
+        "src": "/images/ar-1.jpg",
+        "category": "Home Appliance"
+    },
+
+    {
+        "id": 10,
+        "src": "/images/ar-1.jpg",
+        "category": "Home Appliance"
+    },
+
+    {
+        "id": 11,
+        "src": "/images/ar-1.jpg",
+        "category": "Door"
+    },
+
+    {
+        "id": 12,
+        "src": "/images/ar-1.jpg",
+        "category": "Door"
+    },
+
+    {
+        "id": 13,
+        "src": "/images/ar-1.jpg",
+        "category": "Life Style"
+    },
+
+    {
+        "id": 14,
+        "src": "/images/ar-1.jpg",
+        "category": "Life Style"
+    }
+]

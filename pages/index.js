@@ -2,8 +2,30 @@ import Layout from "@/components/common/layout";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import products from "@/db/products.json";
+import categories from "@/db/categories.json";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+    const [categoryActive, setCategoryActive] = useState("Furniture");
+    const [showProducts, setShowProducts] = useState(
+        products.filter((product) => {
+            return product?.category === categoryActive;
+        })
+    );
+
+    const handleCategoryActive = (category) => {
+        setCategoryActive(category);
+    };
+
+    useEffect(() => {
+        setShowProducts(
+            products.filter((product) => {
+                return product?.category === categoryActive;
+            })
+        );
+    }, [categoryActive]);
+
     return (
         <>
             <Head>
@@ -357,35 +379,46 @@ export default function Home() {
                 </div>
 
                 {/* Service */}
-                <div id="service" className="mb-5 my-8 md:my-16">
+                <div id="service" className="mb-5 mt-10">
                     <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-center">
                         Services
                     </h2>
 
-                    <div className="flex items-center justify-center space-x-2 mb-6">
-                        <button className="bg-primary-700 text-white rounded py-1 px-3 text-sm">
-                            Furniture
-                        </button>
+                    <div className="grid grid-cols-2 gap-5 md:gap-0 md:flex md:items-center md:justify-center space-x-2 mb-6">
+                        {categories?.map((category) => {
+                            return (
+                                <button
+                                    key={category?.id}
+                                    className={`${
+                                        categoryActive === category?.title
+                                            ? "bg-primary-700 text-white"
+                                            : "text-gray-500 hover:text-primary-700"
+                                    } rounded py-1 px-3 text-sm`}
+                                    onClick={() =>
+                                        handleCategoryActive(category?.title)
+                                    }
+                                >
+                                    {category?.title}
+                                </button>
+                            );
+                        })}
+                    </div>
 
-                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
-                            Tiles
-                        </button>
-
-                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
-                            Bathware
-                        </button>
-
-                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
-                            Home Appliance
-                        </button>
-
-                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
-                            Door
-                        </button>
-
-                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
-                            Life Style
-                        </button>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                        {showProducts.map((product) => {
+                            return (
+                                <div key={product?.id}>
+                                    <Image
+                                        className="rounded-lg"
+                                        src={product?.src}
+                                        alt="Augmented Reality"
+                                        width={700}
+                                        height={700}
+                                        layout="responsive"
+                                    />
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -475,65 +508,53 @@ export default function Home() {
 
                         <div className="flex items-center justify-center lg:justify-start text-gray-500 space-x-2 md:text-lg lg:text-lg mb-6">
                             <div className="bg-primary-700 rounded p-1 px-3 w-fit">
-                                <i class="fa-solid fa-envelope text-white"></i>
+                                <i className="fa-solid fa-envelope text-white"></i>
                             </div>
 
                             <span>info@holmeslab.xyz</span>
                         </div>
 
-                        <form action="#" class="space-y-5">
+                        <form action="#" className="space-y-5">
                             <div>
-                                <label
-                                    for="email"
-                                    class="block mb-2 text-sm font-medium text-gray-900"
-                                >
+                                <label className="block mb-2 text-sm font-medium text-gray-900">
                                     Your email
                                 </label>
 
                                 <input
                                     type="email"
-                                    id="email"
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                                     placeholder="name@email.com"
                                     required
                                 />
                             </div>
 
                             <div>
-                                <label
-                                    for="subject"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                >
+                                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                     Subject
                                 </label>
 
                                 <input
                                     type="text"
-                                    id="subject"
-                                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
+                                    className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
                                     placeholder="Let us know how we can help you"
                                     required
                                 />
                             </div>
 
-                            <div class="sm:col-span-2">
-                                <label
-                                    for="message"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-                                >
+                            <div className="sm:col-span-2">
+                                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                                     Your message
                                 </label>
 
                                 <textarea
-                                    id="message"
                                     rows="6"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Leave a comment..."
                                 ></textarea>
                             </div>
                             <button
                                 type="submit"
-                                class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                                className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
                             >
                                 Send message
                             </button>
@@ -547,7 +568,7 @@ export default function Home() {
                             style={{ border: 0 }}
                             allowFullScreen=""
                             loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </div>

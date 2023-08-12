@@ -58,10 +58,8 @@ const Header = () => {
 
                 <button
                     onClick={handleShowNav}
-                    data-collapse-toggle="navbar-default"
                     type="button"
                     className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                    aria-controls="navbar-default"
                     aria-expanded="false"
                 >
                     <span className="sr-only">Open main menu</span>
@@ -74,9 +72,9 @@ const Header = () => {
                     >
                         <path
                             stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M1 1h15M1 7h15M1 13h15"
                         />
                     </svg>
