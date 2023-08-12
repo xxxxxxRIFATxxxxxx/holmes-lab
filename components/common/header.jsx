@@ -90,7 +90,7 @@ const Header = () => {
                                 className={`${
                                     active === "Home"
                                         ? "bg-primary-700 text-white"
-                                        : "bg-transparent text-gray-900"
+                                        : "bg-transparent text-gray-900 hover:text-primary-700"
                                 } block py-2 pl-3 pr-4 rounded md:px-5 md:py-2`}
                             >
                                 Home
@@ -103,7 +103,7 @@ const Header = () => {
                                 className={`${
                                     active === "About"
                                         ? "bg-primary-700 text-white"
-                                        : "bg-transparent text-gray-900"
+                                        : "bg-transparent text-gray-900 hover:text-primary-700"
                                 } block py-2 pl-3 pr-4 rounded md:px-5 md:py-2`}
                             >
                                 About
@@ -116,7 +116,7 @@ const Header = () => {
                                 className={`${
                                     active === "Service"
                                         ? "bg-primary-700 text-white"
-                                        : "bg-transparent text-gray-900"
+                                        : "bg-transparent text-gray-900 hover:text-primary-700"
                                 } block py-2 pl-3 pr-4 rounded md:px-5 md:py-2`}
                             >
                                 Service
@@ -129,7 +129,7 @@ const Header = () => {
                                 className={`${
                                     active === "Contact"
                                         ? "bg-primary-700 text-white"
-                                        : "bg-transparent text-gray-900"
+                                        : "bg-transparent text-gray-900 hover:text-primary-700"
                                 } block py-2 pl-3 pr-4 rounded md:px-5 md:py-2`}
                             >
                                 Contact

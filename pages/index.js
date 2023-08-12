@@ -132,7 +132,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Banner For Website */}
+                {/* Banner 1 For Website */}
                 <div className="hidden lg:block relative mb-5">
                     <div className="grid grid-cols-2 gap-5">
                         <div className="relative">
@@ -175,7 +175,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Banner For Mobile And Tablet */}
+                {/* Banner 1 For Mobile And Tablet */}
                 <div className="block lg:hidden mb-5">
                     <div className="grid grid-cols-1 gap-5">
                         <div>
@@ -264,7 +264,7 @@ export default function Home() {
 
                 {/* About */}
                 <div id="about" className="grid grid-cols-12 gap-5 mb-5">
-                    <div className="col-span-12 md:col-span-7 bg-gray-100 rounded-lg text-center md:text-start p-5 md:p-10">
+                    <div className="col-span-12 lg:col-span-7 bg-gray-100 rounded-lg text-center md:text-start p-5 md:p-10">
                         <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none">
                             About Us
                         </h2>
@@ -300,7 +300,7 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className="col-span-12 md:col-span-5 bg-gray-100 rounded-lg text-center md:text-start p-5 md:p-10">
+                    <div className="col-span-12 lg:col-span-5 bg-gray-100 rounded-lg text-center md:text-start p-5 md:p-10">
                         <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none">
                             Our Mission
                         </h2>
@@ -323,7 +323,7 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className="col-span-12 md:col-span-5 bg-gray-100 rounded-lg text-center md:text-start p-5 md:p-10">
+                    <div className="col-span-12 lg:col-span-5 bg-gray-100 rounded-lg text-center md:text-start p-5 md:p-10">
                         <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none">
                             Our Vision
                         </h2>
@@ -344,7 +344,7 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className="col-span-12 md:col-span-7">
+                    <div className="col-span-12 lg:col-span-7">
                         <Image
                             className="rounded-lg"
                             src="/images/ar-4.jpg"
@@ -353,6 +353,202 @@ export default function Home() {
                             height={700}
                             layout="responsive"
                         />
+                    </div>
+                </div>
+
+                {/* Service */}
+                <div id="service" className="mb-5 my-8 md:my-16">
+                    <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-center">
+                        Services
+                    </h2>
+
+                    <div className="flex items-center justify-center space-x-2 mb-6">
+                        <button className="bg-primary-700 text-white rounded py-1 px-3 text-sm">
+                            Furniture
+                        </button>
+
+                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
+                            Tiles
+                        </button>
+
+                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
+                            Bathware
+                        </button>
+
+                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
+                            Home Appliance
+                        </button>
+
+                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
+                            Door
+                        </button>
+
+                        <button className="text-gray-500 hover:text-primary-700 rounded py-1 px-3 text-sm">
+                            Life Style
+                        </button>
+                    </div>
+                </div>
+
+                {/* Banner 2 For Website */}
+                <div className="hidden lg:block relative mb-5 mt-10">
+                    <Image
+                        className="rounded-lg"
+                        src="/images/ar-3.jpg"
+                        alt="Augmented Reality"
+                        width={1500}
+                        height={1500}
+                        layout="responsive"
+                    />
+
+                    <div className="absolute top-0 bottom-0 my-auto h-fit left-10">
+                        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+                            How to Use AR
+                        </h1>
+
+                        <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
+                            Find out everything about this futuristic technology
+                            and use it on your devices for work optimization,
+                            gaming, localization etc.
+                        </p>
+
+                        <Link
+                            href="/#contact"
+                            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                        >
+                            Contact Us
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Banner 2 For Mobile And Tablet */}
+                <div className="block lg:hidden mb-5 mt-5">
+                    <div className="grid grid-cols-1 gap-5">
+                        <div>
+                            <Image
+                                className="rounded-lg"
+                                src="/images/ar-3-mobile.jpg"
+                                alt="Augmented Reality"
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                            />
+                        </div>
+
+                        <div>
+                            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-center">
+                                How to Use AR
+                            </h1>
+
+                            <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl text-center">
+                                Find out everything about this futuristic
+                                technology and use it on your devices for work
+                                optimization, gaming, localization etc.
+                            </p>
+
+                            <div className="flex items-center justify-center">
+                                <Link
+                                    href="/#contact"
+                                    className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                                >
+                                    Contact Us
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contact */}
+                <div
+                    id="contact"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5"
+                >
+                    <div className="p-5 md:p-10 bg-gray-100 rounded-lg">
+                        <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-center lg:text-start">
+                            Contact Us
+                        </h2>
+
+                        <p className="font-light text-gray-500 md:text-lg lg:text-lg mb-4 text-center lg:text-start">
+                            Got a technical issue? Want to send feedback about a
+                            beta feature? Need details about our Business plan?
+                            Let us know.
+                        </p>
+
+                        <div className="flex items-center justify-center lg:justify-start text-gray-500 space-x-2 md:text-lg lg:text-lg mb-6">
+                            <div className="bg-primary-700 rounded p-1 px-3 w-fit">
+                                <i class="fa-solid fa-envelope text-white"></i>
+                            </div>
+
+                            <span>info@holmeslab.xyz</span>
+                        </div>
+
+                        <form action="#" class="space-y-5">
+                            <div>
+                                <label
+                                    for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900"
+                                >
+                                    Your email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                                    placeholder="name@email.com"
+                                    required
+                                />
+                            </div>
+
+                            <div>
+                                <label
+                                    for="subject"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                >
+                                    Subject
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
+                                    placeholder="Let us know how we can help you"
+                                    required
+                                />
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label
+                                    for="message"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                                >
+                                    Your message
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    rows="6"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Leave a comment..."
+                                ></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                            >
+                                Send message
+                            </button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <iframe
+                            className="w-full h-[400px] md:h-[685px] rounded-lg"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.83187898617!2d90.33728815897476!3d23.780975728147688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1691850083102!5m2!1sen!2sbd"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
                 </div>
             </Layout>
