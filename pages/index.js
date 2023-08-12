@@ -1,10 +1,12 @@
-import Layout from "@/components/common/layout";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Layout from "@/components/common/layout";
 import products from "@/db/products.json";
 import categories from "@/db/categories.json";
-import { useEffect, useRef, useState } from "react";
+import SuccessAlert from "@/components/common/successAlert";
+import ErrorAlert from "@/components/common/errorAlert";
 
 export default function Home() {
     // For Categories
@@ -20,6 +22,84 @@ export default function Home() {
             return product?.category === categoryActive;
         })
     );
+
+    // For Contact Form
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [success, setSuccess] = useState("");
+    const [error, setError] = useState("");
+
+    const resetContactForm = () => {
+        setEmail("");
+        setSubject("");
+        setMessage("");
+    };
+
+    const resetAlert = () => {
+        setTimeout(() => {
+            setSuccess("");
+            setError("");
+        }, 5000);
+    };
+
+    const handleContactForm = (e) => {
+        e.preventDefault();
+
+        setIsLoading(true);
+
+        const contact = {
+            email,
+            subject,
+            message,
+        };
+
+        fetch("https://formspree.io/f/xdoreldk", {
+            method: "POST",
+            body: JSON.stringify(contact),
+            headers: {
+                Accept: "application/json",
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    setIsLoading(false);
+                    setSuccess("Thank you for contacting us.");
+                    resetContactForm();
+                    resetAlert();
+                } else {
+                    response.json().then((data) => {
+                        if (Object.hasOwn(data, "errors")) {
+                            setIsLoading(false);
+
+                            setError(
+                                data["errors"]
+                                    .map((error) => error["message"])
+                                    .join(", ")
+                            );
+
+                            resetContactForm();
+
+                            resetAlert();
+                        } else {
+                            setIsLoading(false);
+                            setError(
+                                "Oops! There was a problem submitting your form"
+                            );
+                            resetContactForm();
+                            resetAlert();
+                        }
+                    });
+                }
+            })
+            .catch((error) => {
+                setIsLoading(false);
+                setError("Oops! There was a problem submitting your form");
+                resetContactForm();
+                resetAlert();
+            });
+    };
 
     useEffect(() => {
         setShowProducts(
@@ -446,7 +526,7 @@ export default function Home() {
 
                         <Link
                             href="/#contact"
-                            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
                         >
                             Contact Us
                         </Link>
@@ -480,7 +560,7 @@ export default function Home() {
                             <div className="flex items-center justify-center">
                                 <Link
                                     href="/#contact"
-                                    className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                                    className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
                                 >
                                     Contact Us
                                 </Link>
@@ -513,7 +593,14 @@ export default function Home() {
                             <span>info@holmeslab.xyz</span>
                         </div>
 
-                        <form action="#" className="space-y-5">
+                        <form
+                            onSubmit={handleContactForm}
+                            className="space-y-5"
+                        >
+                            {success && <SuccessAlert message={success} />}
+
+                            {error && <ErrorAlert message={success} />}
+
                             <div>
                                 <label className="block mb-2 text-sm font-medium text-gray-900">
                                     Your email
@@ -523,6 +610,9 @@ export default function Home() {
                                     type="email"
                                     className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                                     placeholder="name@email.com"
+                                    name="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
                             </div>
@@ -536,6 +626,9 @@ export default function Home() {
                                     type="text"
                                     className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
                                     placeholder="Let us know how we can help you"
+                                    name="subject"
+                                    value={subject}
+                                    onChange={(e) => setSubject(e.target.value)}
                                     required
                                 />
                             </div>
@@ -549,13 +642,41 @@ export default function Home() {
                                     rows="6"
                                     className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Leave a comment..."
+                                    name="message"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    required
                                 ></textarea>
                             </div>
+
                             <button
                                 type="submit"
-                                className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                                className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300"
+                                disabled={isLoading}
                             >
-                                Send message
+                                {isLoading && (
+                                    <div role="status">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="inline w-4 h-4 mr-2 text-gray-200 animate-spin fill-primary-600"
+                                            viewBox="0 0 100 101"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                                fill="currentColor"
+                                            />
+                                            <path
+                                                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                                fill="currentFill"
+                                            />
+                                        </svg>
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                )}
+
+                                <span>Send message</span>
                             </button>
                         </form>
                     </div>
