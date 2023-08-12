@@ -34,13 +34,19 @@ export default function Document() {
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
-                    crossorigin
+                    crossOrigin
                 />
 
                 <link
                     href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
                     rel="stylesheet"
                 />
+
+                {/* 3D */}
+                <script
+                    async
+                    src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"
+                ></script>
             </Head>
 
             <body>
@@ -50,6 +56,19 @@ export default function Document() {
                 {/* Flowbite */}
                 <script
                     src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"
+                    async
+                ></script>
+
+                {/* 3D */}
+                <script
+                    type="module"
+                    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+                    async
+                ></script>
+
+                <script
+                    nomodule
+                    src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
                     async
                 ></script>
             </body>

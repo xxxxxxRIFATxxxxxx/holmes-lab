@@ -8,14 +8,13 @@ const Footer = () => {
             <div className="mx-auto w-full py-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between items-center">
                     <div className="mb-6 md:mb-0">
-                        <Link href="/" className="flex items-center">
+                        <Link href="/#home" className="flex items-center">
                             <Image
                                 className="mr-1"
                                 src="/images/logo.png"
                                 alt="Logo"
                                 width={50}
                                 height={50}
-                                layout="fixed"
                             />
 
                             <h2 className="uppercase text-xl">Holmes Lab</h2>
@@ -56,21 +55,23 @@ const Footer = () => {
 
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link
-                                        href="https://github.com/themesberg/flowbite"
+                                    <a
+                                        href="#"
+                                        target="_blank"
                                         className="hover:underline "
                                     >
                                         Facebook
-                                    </Link>
+                                    </a>
                                 </li>
 
                                 <li>
-                                    <Link
-                                        href="https://discord.gg/4eeurUVvTy"
+                                    <a
+                                        href="#"
+                                        target="_blank"
                                         className="hover:underline"
                                     >
                                         Instagram
-                                    </Link>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -102,12 +103,9 @@ const Footer = () => {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center">
                         © 2023{" "}
-                        <a
-                            href="https://flowbite.com/"
-                            className="hover:underline"
-                        >
+                        <Link href="/#home" className="hover:underline">
                             Holmes Lab
-                        </a>
+                        </Link>
                         . Developed by{" "}
                         <a
                             className="text-[#16c9ab]"
@@ -121,6 +119,7 @@ const Footer = () => {
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
                         <a
                             href="#"
+                            target="_blank"
                             className="text-gray-500 hover:text-gray-900"
                         >
                             <svg
@@ -141,6 +140,7 @@ const Footer = () => {
 
                         <a
                             href="#"
+                            target="_blank"
                             className="text-gray-500 hover:text-gray-900"
                         >
                             <svg
@@ -157,6 +157,7 @@ const Footer = () => {
 
                         <a
                             href="#"
+                            target="_blank"
                             className="text-gray-500 hover:text-gray-900"
                         >
                             <svg
@@ -177,6 +178,7 @@ const Footer = () => {
 
                         <a
                             href="#"
+                            target="_blank"
                             className="text-gray-500 hover:text-gray-900"
                         >
                             <svg
@@ -194,8 +196,10 @@ const Footer = () => {
                             </svg>
                             <span className="sr-only">GitHub account</span>
                         </a>
+
                         <a
                             href="#"
+                            target="_blank"
                             className="text-gray-500 hover:text-gray-900"
                         >
                             <svg

@@ -1,85 +1,109 @@
 [
     {
         "id": 1,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Furniture"
     },
 
     {
         "id": 2,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Furniture"
     },
 
     {
         "id": 3,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Furniture"
     },
 
     {
         "id": 4,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Furniture"
     },
 
     {
         "id": 5,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Tiles"
     },
 
     {
         "id": 6,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Tiles"
     },
 
     {
         "id": 7,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Bathware"
     },
 
     {
         "id": 8,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Bathware"
     },
 
     {
         "id": 9,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Home Appliance"
     },
 
     {
         "id": 10,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Home Appliance"
     },
 
     {
         "id": 11,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Door"
     },
 
     {
         "id": 12,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Door"
     },
 
     {
         "id": 13,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Life Style"
     },
 
     {
         "id": 14,
-        "src": "/images/ar-1.jpg",
+        "src": "/3d/car.glb",
         "category": "Life Style"
+    },
+
+    {
+        "id": 15,
+        "src": "/3d/car.glb",
+        "category": "Furniture"
+    },
+
+    {
+        "id": 16,
+        "src": "/3d/car.glb",
+        "category": "Furniture"
+    },
+
+    {
+        "id": 17,
+        "src": "/3d/car.glb",
+        "category": "Furniture"
+    },
+
+    {
+        "id": 18,
+        "src": "/3d/car.glb",
+        "category": "Furniture"
     }
 ]

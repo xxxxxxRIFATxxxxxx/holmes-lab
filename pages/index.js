@@ -4,19 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import products from "@/db/products.json";
 import categories from "@/db/categories.json";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+    // For Categories
     const [categoryActive, setCategoryActive] = useState("Furniture");
+
+    const handleCategoryActive = (category) => {
+        setCategoryActive(category);
+    };
+
+    // For Show Products According To Active Category
     const [showProducts, setShowProducts] = useState(
         products.filter((product) => {
             return product?.category === categoryActive;
         })
     );
-
-    const handleCategoryActive = (category) => {
-        setCategoryActive(category);
-    };
 
     useEffect(() => {
         setShowProducts(
@@ -49,14 +52,14 @@ export default function Home() {
 
             <Layout>
                 {/* Hero Section For Website */}
-                <div className="hidden lg:block relative mb-5">
+                <div id="home" className="hidden lg:block relative mb-5">
                     <Image
                         className="rounded-lg"
                         src="/images/hero-bg.jpg"
                         alt="Augmented Reality"
-                        width={1500}
-                        height={1500}
-                        layout="responsive"
+                        width={2000}
+                        height={2000}
+                        priority
                     />
 
                     <div className="absolute top-0 bottom-0 my-auto h-fit left-10">
@@ -99,16 +102,15 @@ export default function Home() {
                 </div>
 
                 {/* Hero Section For Mobile And Tablet */}
-                <div className="block lg:hidden mb-5">
+                <div id="home" className="block lg:hidden mb-5">
                     <div className="grid grid-cols-1 gap-5">
                         <div>
                             <Image
                                 className="rounded-lg"
                                 src="/images/hero-bg-mobile.jpg"
                                 alt="Augmented Reality"
-                                width={500}
-                                height={500}
-                                layout="responsive"
+                                width={1500}
+                                height={1500}
                             />
                         </div>
 
@@ -162,9 +164,8 @@ export default function Home() {
                                 className="rounded-lg"
                                 src="/images/ar-1.jpg"
                                 alt="Augmented Reality"
-                                width={700}
-                                height={700}
-                                layout="responsive"
+                                width={1500}
+                                height={1500}
                             />
 
                             <div className="absolute top-0 left-10 bottom-0 h-fit m-auto">
@@ -183,9 +184,8 @@ export default function Home() {
                                 className="rounded-lg"
                                 src="/images/ar-2.jpg"
                                 alt="Augmented Reality"
-                                width={700}
-                                height={700}
-                                layout="responsive"
+                                width={1500}
+                                height={1500}
                             />
 
                             <div className="absolute top-0 left-10 bottom-0 h-fit m-auto">
@@ -205,9 +205,8 @@ export default function Home() {
                                 className="rounded-lg mb-5"
                                 src="/images/ar-1.jpg"
                                 alt="Augmented Reality"
-                                width={500}
-                                height={500}
-                                layout="responsive"
+                                width={1500}
+                                height={1500}
                             />
 
                             <div>
@@ -226,9 +225,8 @@ export default function Home() {
                                 className="rounded-lg mb-5"
                                 src="/images/ar-2.jpg"
                                 alt="Augmented Reality"
-                                width={500}
-                                height={500}
-                                layout="responsive"
+                                width={1500}
+                                height={1500}
                             />
 
                             <div>
@@ -371,9 +369,8 @@ export default function Home() {
                             className="rounded-lg"
                             src="/images/ar-4.jpg"
                             alt="Augmented Reality"
-                            width={700}
-                            height={700}
-                            layout="responsive"
+                            width={1500}
+                            height={1500}
                         />
                     </div>
                 </div>
@@ -408,14 +405,18 @@ export default function Home() {
                         {showProducts.map((product) => {
                             return (
                                 <div key={product?.id}>
-                                    <Image
-                                        className="rounded-lg"
+                                    <model-viewer
+                                        style={{
+                                            width: "100%",
+                                            height: "300px",
+                                        }}
                                         src={product?.src}
-                                        alt="Augmented Reality"
-                                        width={700}
-                                        height={700}
-                                        layout="responsive"
-                                    />
+                                        alt="3D model"
+                                        shadow-intensity="1"
+                                        camera-controls
+                                        auto-rotate
+                                        ar
+                                    ></model-viewer>
                                 </div>
                             );
                         })}
@@ -428,9 +429,8 @@ export default function Home() {
                         className="rounded-lg"
                         src="/images/ar-3.jpg"
                         alt="Augmented Reality"
-                        width={1500}
-                        height={1500}
-                        layout="responsive"
+                        width={2000}
+                        height={2000}
                     />
 
                     <div className="absolute top-0 bottom-0 my-auto h-fit left-10">
@@ -461,9 +461,8 @@ export default function Home() {
                                 className="rounded-lg"
                                 src="/images/ar-3-mobile.jpg"
                                 alt="Augmented Reality"
-                                width={500}
-                                height={500}
-                                layout="responsive"
+                                width={1500}
+                                height={1500}
                             />
                         </div>
 
