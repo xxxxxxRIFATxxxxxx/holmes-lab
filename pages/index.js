@@ -469,6 +469,11 @@ export default function Home() {
                         Services
                     </h2>
 
+                    <div className="text-center mb-4 flex items-center justify-center">
+                        <i className="fa-solid fa-eye text-2xl mr-2"></i>
+                        <span className="text-gray-500 text-sm">VisionARy</span>
+                    </div>
+
                     <div className="grid grid-cols-2 gap-5 md:gap-0 md:flex md:items-center md:justify-center space-x-2 mb-6">
                         {categories?.map((category) => {
                             return (
