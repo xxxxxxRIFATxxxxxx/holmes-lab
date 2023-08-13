@@ -55,50 +55,58 @@ export default function Home() {
             message,
         };
 
-        fetch("https://formspree.io/f/xdoreldk", {
-            method: "POST",
-            body: JSON.stringify(contact),
-            headers: {
-                Accept: "application/json",
-            },
-        })
-            .then((response) => {
-                if (response.ok) {
-                    setIsLoading(false);
-                    setSuccess("Thank you for contacting us.");
-                    resetContactForm();
-                    resetAlert();
-                } else {
-                    response.json().then((data) => {
-                        if (Object.hasOwn(data, "errors")) {
-                            setIsLoading(false);
+        // fetch("", {
+        //     method: "POST",
+        //     body: JSON.stringify(contact),
+        //     headers: {
+        //         Accept: "application/json",
+        //     },
+        // })
+        //     .then((response) => {
+        //         if (response.ok) {
+        //             setIsLoading(false);
+        //             setSuccess("Thank you for contacting us.");
+        //             resetContactForm();
+        //             resetAlert();
+        //         } else {
+        //             response.json().then((data) => {
+        //                 if (Object.hasOwn(data, "errors")) {
+        //                     setIsLoading(false);
 
-                            setError(
-                                data["errors"]
-                                    .map((error) => error["message"])
-                                    .join(", ")
-                            );
+        //                     setError(
+        //                         data["errors"]
+        //                             .map((error) => error["message"])
+        //                             .join(", ")
+        //                     );
 
-                            resetContactForm();
+        //                     resetContactForm();
 
-                            resetAlert();
-                        } else {
-                            setIsLoading(false);
-                            setError(
-                                "Oops! There was a problem submitting your form"
-                            );
-                            resetContactForm();
-                            resetAlert();
-                        }
-                    });
-                }
-            })
-            .catch((error) => {
-                setIsLoading(false);
-                setError("Oops! There was a problem submitting your form");
-                resetContactForm();
-                resetAlert();
-            });
+        //                     resetAlert();
+        //                 } else {
+        //                     setIsLoading(false);
+        //                     setError(
+        //                         "Oops! There was a problem submitting your form"
+        //                     );
+        //                     resetContactForm();
+        //                     resetAlert();
+        //                 }
+        //             });
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         setIsLoading(false);
+        //         setError("Oops! There was a problem submitting your form");
+        //         resetContactForm();
+        //         resetAlert();
+        //     });
+
+        setTimeout(() => {
+            resetContactForm();
+            setIsLoading(false);
+            setSuccess("Thank you for contacting us.");
+        }, 1000);
+
+        resetAlert();
     };
 
     useEffect(() => {

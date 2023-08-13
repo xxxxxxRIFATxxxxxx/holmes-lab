@@ -101,7 +101,7 @@ const Footer = () => {
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
 
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm text-gray-500 sm:text-center">
+                    <span className="text-sm text-gray-500 sm:text-center hidden">
                         © 2023{" "}
                         <Link href="/#home" className="hover:underline">
                             Holmes Lab
@@ -114,6 +114,14 @@ const Footer = () => {
                         >
                             MiniSoft
                         </a>
+                    </span>
+
+                    <span className="text-sm text-gray-500 sm:text-center">
+                        © 2023{" "}
+                        <Link href="/#home" className="hover:underline">
+                            Holmes Lab
+                        </Link>
+                        . All Rights Reserved
                     </span>
 
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
