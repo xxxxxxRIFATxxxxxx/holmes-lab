@@ -483,22 +483,36 @@ export default function Home() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                         {showProducts.map((product) => {
-                            return (
-                                <div key={product?.id}>
-                                    <model-viewer
-                                        style={{
-                                            width: "100%",
-                                            height: "300px",
-                                        }}
-                                        src={product?.src}
-                                        alt="3D model"
-                                        shadow-intensity="1"
-                                        camera-controls
-                                        auto-rotate
-                                        ar
-                                    ></model-viewer>
-                                </div>
-                            );
+                            if (product?.category === "AR Ad") {
+                                return (
+                                    <div key={product?.id}>
+                                        <Image
+                                            className="rounded-lg"
+                                            src={product?.src}
+                                            alt="Augmented Reality"
+                                            width={1500}
+                                            height={1500}
+                                        />
+                                    </div>
+                                );
+                            } else {
+                                return (
+                                    <div key={product?.id}>
+                                        <model-viewer
+                                            style={{
+                                                width: "100%",
+                                                height: "300px",
+                                            }}
+                                            src={product?.src}
+                                            alt="3D model"
+                                            shadow-intensity="1"
+                                            camera-controls
+                                            auto-rotate
+                                            ar
+                                        ></model-viewer>
+                                    </div>
+                                );
+                            }
                         })}
                     </div>
                 </div>
