@@ -7,300 +7,138 @@
 
     {
         "id": 2,
-        "src": "/3d/bathware/bathtub.glb",
-        "category": "Bathware"
-    },
-
-    {
-        "id": 3,
-        "src": "/3d/bathware/bathtub2.glb",
-        "category": "Bathware"
-    },
-
-    {
-        "id": 4,
         "src": "/3d/bathware/bathtub3.glb",
         "category": "Bathware"
     },
 
     {
-        "id": 5,
-        "src": "/3d/bathware/bathtub4.glb",
-        "category": "Bathware"
-    },
-
-    {
-        "id": 6,
-        "src": "/3d/bathware/bathtub5.glb",
-        "category": "Bathware"
-    },
-
-    {
-        "id": 7,
+        "id": 3,
         "src": "/3d/bathware/commode.glb",
         "category": "Bathware"
     },
 
     {
-        "id": 8,
-        "src": "/3d/bathware/commode2.glb",
-        "category": "Bathware"
-    },
-
-    {
-        "id": 9,
+        "id": 4,
         "src": "/3d/bathware/faucet.glb",
         "category": "Bathware"
     },
 
     {
-        "id": 10,
-        "src": "/3d/bathware/kitchen_sink.glb",
-        "category": "Bathware"
-    },
-
-    {
-        "id": 11,
-        "src": "/3d/bathware/tap1.glb",
-        "category": "Bathware"
-    },
-
-    {
-        "id": 12,
-        "src": "/3d/door/door.glb",
-        "category": "Door"
-    },
-
-    {
-        "id": 13,
-        "src": "/3d/door/door2.glb",
-        "category": "Door"
-    },
-
-    {
-        "id": 14,
-        "src": "/3d/door/door3.glb",
-        "category": "Door"
-    },
-
-    {
-        "id": 15,
-        "src": "/3d/door/door4.glb",
-        "category": "Door"
-    },
-
-    {
-        "id": 16,
+        "id": 5,
         "src": "/3d/door/door5.glb",
         "category": "Door"
     },
 
     {
-        "id": 17,
+        "id": 6,
         "src": "/3d/furniture/bed.glb",
         "category": "Furniture"
     },
 
     {
-        "id": 18,
-        "src": "/3d/furniture/office-chair.glb",
-        "category": "Furniture"
-    },
-
-    {
-        "id": 19,
-        "src": "/3d/furniture/office_table.glb",
-        "category": "Furniture"
-    },
-
-    {
-        "id": 20,
-        "src": "/3d/furniture/plastic_chair.glb",
-        "category": "Furniture"
-    },
-
-    {
-        "id": 21,
-        "src": "/3d/furniture/plastic_round_table.glb",
-        "category": "Furniture"
-    },
-
-    {
-        "id": 22,
-        "src": "/3d/furniture/round_table.glb",
-        "category": "Furniture"
-    },
-
-    {
-        "id": 23,
-        "src": "/3d/furniture/sofa.glb",
-        "category": "Furniture"
-    },
-
-    {
-        "id": 24,
+        "id": 7,
         "src": "/3d/furniture/table_set.glb",
         "category": "Furniture"
     },
 
     {
-        "id": 25,
+        "id": 8,
         "src": "/3d/furniture/wardrobe.glb",
         "category": "Furniture"
     },
 
     {
-        "id": 26,
-        "src": "/3d/home-appliance/ac.glb",
-        "category": "Home Appliance"
-    },
-
-    {
-        "id": 27,
+        "id": 9,
         "src": "/3d/home-appliance/ac2.glb",
         "category": "Home Appliance"
     },
 
     {
-        "id": 28,
+        "id": 10,
         "src": "/3d/home-appliance/fan.glb",
         "category": "Home Appliance"
     },
 
     {
-        "id": 29,
-        "src": "/3d/home-appliance/fan2.glb",
-        "category": "Home Appliance"
-    },
-
-    {
-        "id": 30,
+        "id": 11,
         "src": "/3d/home-appliance/fridge.glb",
         "category": "Home Appliance"
     },
 
     {
-        "id": 31,
-        "src": "/3d/home-appliance/fridge2.glb",
-        "category": "Home Appliance"
-    },
-
-    {
-        "id": 32,
-        "src": "/3d/home-appliance/fridge3.glb",
-        "category": "Home Appliance"
-    },
-
-    {
-        "id": 33,
+        "id": 12,
         "src": "/3d/home-appliance/oven.glb",
         "category": "Home Appliance"
     },
 
     {
-        "id": 34,
+        "id": 13,
         "src": "/3d/home-appliance/tv.glb",
         "category": "Home Appliance"
     },
 
     {
-        "id": 35,
-        "src": "/3d/home-appliance/tv2.glb",
-        "category": "Home Appliance"
-    },
-
-    {
-        "id": 36,
-        "src": "/3d/home-appliance/tv3.glb",
-        "category": "Home Appliance"
-    },
-
-    {
-        "id": 37,
+        "id": 14,
         "src": "/3d/life-style/dress.glb",
         "category": "Life Style"
     },
 
     {
-        "id": 38,
+        "id": 15,
         "src": "/3d/life-style/dress2.glb",
         "category": "Life Style"
     },
 
     {
-        "id": 49,
+        "id": 16,
         "src": "/3d/life-style/sharee200.glb",
         "category": "Life Style"
     },
 
     {
-        "id": 40,
-        "src": "/3d/life-style/shoe.glb",
-        "category": "Life Style"
-    },
-
-    {
-        "id": 41,
+        "id": 17,
         "src": "/3d/life-style/shoe2.glb",
         "category": "Life Style"
     },
 
     {
-        "id": 42,
-        "src": "/3d/life-style/shoe3.glb",
-        "category": "Life Style"
-    },
-
-    {
-        "id": 43,
-        "src": "/3d/life-style/shoe4.glb",
-        "category": "Life Style"
-    },
-
-    {
-        "id": 44,
-        "src": "/3d/life-style/shoe5.glb",
-        "category": "Life Style"
-    },
-
-    {
-        "id": 45,
+        "id": 18,
         "src": "/3d/tiles/floor_tiles.glb",
         "category": "Tiles"
     },
 
     {
-        "id": 46,
+        "id": 19,
         "src": "/3d/tiles/floor_tiles2.glb",
         "category": "Tiles"
     },
 
     {
-        "id": 47,
+        "id": 20,
         "src": "/3d/tiles/floor_tiles3.glb",
         "category": "Tiles"
     },
 
     {
-        "id": 48,
+        "id": 21,
         "src": "/3d/tiles/wall_tiles.glb",
         "category": "Tiles"
     },
 
     {
-        "id": 49,
+        "id": 22,
         "src": "/3d/tiles/wall_tiles2.glb",
         "category": "Tiles"
     },
 
     {
-        "id": 50,
+        "id": 23,
         "src": "/3d/ar-ad/ar-ad-1.jpg",
         "category": "AR Ad"
     },
 
     {
-        "id": 51,
+        "id": 24,
         "src": "/3d/ar-ad/ar-ad-2.jpg",
         "category": "AR Ad"
     }
