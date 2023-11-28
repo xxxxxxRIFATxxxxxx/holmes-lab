@@ -522,6 +522,10 @@ export default function Home() {
                                             camera-controls
                                             auto-rotate
                                             ar
+                                            ar-placement="floor"
+                                            ar-scale="auto"
+                                            touch-action="pan-y"
+                                            interaction-prompt="none"
                                         ></model-viewer>
                                     </div>
                                 );
